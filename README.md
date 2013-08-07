@@ -1,4 +1,4 @@
-node-find-rss [![Build Status](https://travis-ci.org/nikezono/node-find-favicon.png)](https://travis-ci.org/nikezono/node-find-favicon)
+node-find-favicon [![Build Status](https://travis-ci.org/nikezono/node-find-favicon.png)](https://travis-ci.org/nikezono/node-find-favicon)
 ---
 
 [![NPM](https://nodei.co/npm/find-favicon.png)](https://nodei.co/npm/find-favicon/)
