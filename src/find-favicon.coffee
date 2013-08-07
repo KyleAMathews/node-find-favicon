@@ -2,13 +2,13 @@ module.exports = (req,callback)->
 
   # dependency
   htmlparser = require("htmlparser2")
- 
+
   # utility
   url          = require 'url'
   request      = require 'request'
-  
+
   # instance property
-  favicon      = 
+  favicon      =
     url: req
     path: req
   cand = ''
@@ -19,12 +19,12 @@ module.exports = (req,callback)->
   )
 
   # main
-  request.get 
+  request.get
     uri: req
     encoding: null
   , (err,res,body)->
     if err?
-      callback err,null 
+      callback err,null
       return
 
     parser.write body
@@ -35,10 +35,15 @@ module.exports = (req,callback)->
     if cand.length > 0
       if cand.match /[http|https]:\/\//
         favicon.url = cand
+        return callback null,favicon
       else
         favicon.path = cand
-        favicon.url = "#{obj.protocol}//#{obj.host}#{cand}"
-      callback null,favicon
+        if cand.charAt(0) is '/'
+          favicon.url = "#{obj.protocol}//#{obj.host}#{cand}"
+          callback null,favicon
+        else
+          favicon.url = "#{obj.protocol}//#{obj.host}/#{cand}"
+          callback null,favicon
     else
       guess = "#{obj.protocol}//#{obj.host}/favicon.ico"
       request guess, (err,res,body)->
