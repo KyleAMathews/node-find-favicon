@@ -2,13 +2,13 @@
   "name": "find-favicon",
   "description": "find favicon.ico from html",
   "version": "0.1.2",
-  "author": "nikezono",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "request": "*",
-    "htmlparser2": "*"
+    "htmlparser2": "^3.8.2",
+    "request": "^2.51.0"
   },
   "devDependencies": {
-    "coffee-script": "*"
+    "coffee-script": "^1.8.0"
   },
   "keywords": [
     "find",
@@ -20,12 +20,9 @@
     "type": "git",
     "url": "git://github.com/nikezono/node-find-favicon"
   },
-  "main": "lib/find-favicon.js",
+  "main": "src/find-favicon.coffee",
   "scripts": {
-    "test" : "cake test"
-    },
-  "engines": {
-    "node": "*"
+    "test": "cake test"
   },
   "directories": {
     "test": "test"
