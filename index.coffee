@@ -22,6 +22,7 @@ module.exports = (req,callback)->
   request.get
     uri: req
     encoding: null
+    timeout: 6000
   , (err,res,body)->
     if err?
       callback err,null
