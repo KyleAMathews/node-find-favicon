@@ -20,7 +20,7 @@
     "type": "git",
     "url": "git://github.com/nikezono/node-find-favicon"
   },
-  "main": "src/find-favicon.coffee",
+  "main": "./index.coffee",
   "scripts": {
     "test": "cake test"
   },
